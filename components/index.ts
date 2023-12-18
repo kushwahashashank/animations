@@ -1,5 +1,6 @@
-import Navbar from "./navbar/navbar";
+import Projects from "./projects/projects";
 import About from "./about/about";
+import Main from "./main/main"
 import { Context } from "./context/store";
 import Star from "./star/star";
-export { Navbar, About, Context, Star };
+export { Projects, Context, Star,Main,About };
