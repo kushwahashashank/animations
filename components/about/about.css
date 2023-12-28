@@ -1,5 +1,4 @@
-.about-container{
-    /* background-color: red; */
+/* .about-container{
     display: flex;
     height: max-content;
     padding: 4rem 17% 2rem 17%;
@@ -14,19 +13,62 @@
     
     display: flex;
     text-align: center;
-    /* color:rgb(46, 165, 153); */
-    color: rgb(46, 165, 153);
-    /* padding: 0rem 0rem 0rem 2rem; */
-    /* height: max-content;
-    width: max-content; */
-}
 
-/* .intro:hover + .hover-cisrcle { 
-    background-color: rgb(46, 165, 153);
-    height: 300px;
-    z-index: 1;
-    width: 300px;
-    border-radius: 50%;
-    mix-blend-mode:difference ;
-    position: absolute;
-}  */
+    color: rgb(46, 165, 153);
+
+}
+ */
+
+
+
+
+.container {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 15% 2rem 15%;
+    /* background-color:rgb(100,136,132); */
+    background-color: rgba(0, 0, 0);;
+   }
+   
+   .header {
+    margin: 1.5rem 0;
+    font-size: 4rem;
+    /* color: rgb(42, 81, 62); */
+    color: rgb(157, 157, 159);
+   }
+   
+   p {
+    margin: 0.5rem 0;
+    font-size: 2rem;
+    color: rgb(42, 81, 62);
+   }
+   
+   
+   /* animation class and keyframes */
+   .overflow-hidden {
+    overflow: hidden;
+   }
+   
+   .drop-in {
+    animation: drop-in 1s ease 200ms backwards;
+   }
+   .drop-in-1{
+    animation: drop-in 1s ease 400ms backwards;
+   }
+   .drop-in-2{
+    animation: drop-in 1s ease 600ms backwards;
+   }
+   
+   @keyframes drop-in {
+    from {
+     opacity: 0;
+     transform: translateY(-100px);
+    }
+    to {
+     opacity: 1;
+     transform: translate(0px);
+    }
+   }
+   

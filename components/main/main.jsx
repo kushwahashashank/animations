@@ -2,7 +2,7 @@
 // import Link from "next/link";
 import Image from "next/image";
 import "./main.css";
-import { About } from "../index";
+import { About, Social } from "../index";
 import { useState, useEffect } from "react";
 import background from "../Assests/mountains/background.png";
 import fog_7 from "../Assests/mountains/fog_7.png";
@@ -24,34 +24,41 @@ import mountain_1 from "../Assests/mountains/mountain_1.png";
 import sun_rays from "../Assests/mountains/sun_rays.png";
 import black_shadow from "../Assests/mountains/black_shadow.png";
 import fog_1 from "../Assests/mountains/fog_1.png";
-// import { useContext } from "react";
-// import { StateContext } from "../context/store";
+import { useContext } from "react";
+import { StateContext } from "../context/store";
 const main = () => {
   const [loaded, setLoaded] = useState(false);
+  const position = useContext(StateContext);
+  // document.addEventListener("readystatechange", function (e) {
+  //   if(e.target.readyState==='complete'){
+  //     setLoaded(true);
+  //   }
+  // });
 
-  document.addEventListener("readystatechange", function (e) {
-    setLoaded(true);
+  document.addEventListener("readystatechange",(e) => {
+    // if(document.readyState==='complete'){
+      setLoaded(true);
+    // }
   });
 
   // states for mousemove control and rotation degree
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
+  // const [coords, setCoords] = useState({ x: 0, y: 0 });
   let rotatedegree = 0;
 
   // Function for mousemove animation
   useEffect(() => {
     const handleMousemove = (event) => {
-      setCoords({
+      position.setCoords({
         x: event.clientX - window.innerWidth / 2,
         y: event.clientY - window.innerHeight / 2,
       });
       const element = document.querySelectorAll(".parallax");
-      rotatedegree = (coords.x / (window.innerWidth / 2)) * 10;
+      rotatedegree = (position.coords.x / (window.innerWidth / 2)) * 10;
       element.forEach((el) => {
         const speedx = el.dataset.speedx;
         const speedy = el.dataset.speedy;
         const speedz = el.dataset.speedz;
         const rotate = el.dataset.rotation;
-
         let isLeft =
           parseFloat(getComputedStyle(el).left) < window.innerWidth / 2
             ? 1
@@ -63,8 +70,8 @@ const main = () => {
         el.style.transform = ` perspective(2300px) translateZ(${
           zValue * speedz
         }px) rotateY(${rotatedegree * rotate}deg) translateX(calc(-50% - ${
-          coords.x * speedx
-        }px)) translateY(calc(-50% + ${coords.y * speedy}px))   `;
+          position.coords.x * speedx
+        }px)) translateY(calc(-50% + ${position.coords.y * speedy}px))   `;
       });
     };
     window.addEventListener("mousemove", handleMousemove);
@@ -72,12 +79,12 @@ const main = () => {
     return () => {
       window.removeEventListener("mousemove", handleMousemove);
     };
-  }, [coords.x, coords.y]);
+  }, [position.coords.x, position.coords.y]);
 
   return (
     <>
       {!loaded ? (
-        <div style={{ color: "white" }}>Loading...</div>
+        <div style={{ color: "white",width:"100vw",height:"100vh",justifyContent:"center",alignItems:"center" }}>Loading...</div>
       ) : (
         <>
           <div className="home">
@@ -277,8 +284,11 @@ const main = () => {
                 className="parallax fog-1"
               />
             </div>
+            
           </div>
 
+          
+<Social/>
           <About />
         </>
       )}

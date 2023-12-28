@@ -152,7 +152,7 @@ body::-webkit-scrollbar {
 }
 
 .text h2 {
-  font-weight: 300;
+  font-weight: 1000;
   font-size: 7rem;
   color: rgba(1, 17, 11, 0.869);
   -webkit-text-stroke-width: 1px;
@@ -333,5 +333,9 @@ body::-webkit-scrollbar {
   left: 50%;
   object-fit: cover;
 }
+
+
+
+
 
 

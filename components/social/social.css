@@ -1,0 +1,17 @@
+
+/* Social */
+
+.social{
+    position: fixed;
+    /* bottom: 2rem; */
+    display: flex;
+    background:transparent;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    z-index: 234;
+  
+  }
+  Link{
+    color: red;
+  }

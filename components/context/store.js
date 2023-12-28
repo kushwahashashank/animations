@@ -4,9 +4,9 @@ import { useState, createContext } from "react";
 export const StateContext = createContext("");
 
 let Context = ({ children }) => {
-  const [aboutposition, setAboutposition] = useState("Hello bro");
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
   return (
-    <StateContext.Provider value={{ aboutposition, setAboutposition }}>
+    <StateContext.Provider value={{ coords, setCoords }}>
       {children}
     </StateContext.Provider>
   );
