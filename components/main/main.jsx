@@ -1,8 +1,9 @@
 "use client";
-// import Link from "next/link";
+import Link from "next/link";
+import React from "react";
 import Image from "next/image";
 import "./main.css";
-import { About, Social } from "../index";
+
 import { useState, useEffect } from "react";
 import background from "../Assests/mountains/background.png";
 import fog_7 from "../Assests/mountains/fog_7.png";
@@ -28,23 +29,15 @@ import { useContext } from "react";
 import { StateContext } from "../context/store";
 const main = () => {
   const [loaded, setLoaded] = useState(false);
-  const position = useContext(StateContext);
-  // document.addEventListener("readystatechange", function (e) {
-  //   if(e.target.readyState==='complete'){
-  //     setLoaded(true);
-  //   }
-  // });
 
-  document.addEventListener("readystatechange",(e) => {
-    // if(document.readyState==='complete'){
-      setLoaded(true);
-    // }
+  document.addEventListener("readystatechange", (e) => {
+    setLoaded(true);
   });
 
   // states for mousemove control and rotation degree
-  // const [coords, setCoords] = useState({ x: 0, y: 0 });
-  let rotatedegree = 0;
 
+  let rotatedegree = 0;
+  const position = useContext(StateContext);
   // Function for mousemove animation
   useEffect(() => {
     const handleMousemove = (event) => {
@@ -84,7 +77,18 @@ const main = () => {
   return (
     <>
       {!loaded ? (
-        <div style={{ color: "white",width:"100vw",height:"100vh",justifyContent:"center",alignItems:"center" }}>Loading...</div>
+        <div
+          style={{
+            color: "white",
+            width: "100vw",
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          Loading...
+        </div>
       ) : (
         <>
           <div className="home">
@@ -172,6 +176,16 @@ const main = () => {
               <div data-rotation="0.13" className="parallax text">
                 <h1>Abhishek</h1>
                 <h2>INDIA</h2>
+              </div>
+              <div className="buttons">
+                <Link
+                  className="resume"
+                  href="https://drive.google.com/drive/folders/1oqyZ9hvVUZj1Bju8Wmauye8adJb6Gkxp?usp=share_link"
+                  target="_blank"
+                >
+                  Resume
+                </Link>
+                <div className="contact-page">Let's Talk</div>
               </div>
               <Image
                 src={mountain_6}
@@ -284,12 +298,7 @@ const main = () => {
                 className="parallax fog-1"
               />
             </div>
-            
           </div>
-
-          
-<Social/>
-          <About />
         </>
       )}
     </>

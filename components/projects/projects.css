@@ -1,10 +1,11 @@
 body {
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(0, 0, 0);
   margin: 0rem;
   padding: 0;
+  position: relative;
   overflow: hidden;
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:white;font-size:24px;'><text y='50%'>⦿</text></svg>")
       16 0,
     auto;
@@ -13,35 +14,71 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+.table-div {
+  display: table;
+  height: auto;
+  width: 100vw;
+}
+
 .image-warpper {
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(0, 0, 0);
   height: 100vh;
   width: 100vw;
+  position: relative;
+  /* top: 0; */
+  transition: transform 2s cubic-bezier(0.25, 0.51, 0.29, 1);
+  /* scroll-behavior: smooth; */
+}
+.image-wrapper-hold {
+  z-index: 400;
+  position: fixed;
+  top: 0;
+}
+
+.conatiner-scroll {
+  top: 0;
+  /* position: absolute; */
+  position: static;
+  z-index: 4000;
+  height: 500vh;
+  width: 100vw;
+  color: rgb(62, 62, 62);
+  background: transparent;
+  background-color: rgba(71, 224, 224, 0.6);
+}
+.make-top100 {
+  position: absolute;
+  top: 100vh;
+}
+
+.conatiner-scroll-hold {
   position: fixed;
 }
+
 #image-track {
-  background-color: rgb(45, 45, 45);
+  scroll-behavior: smooth;
+  background-color: rgb(0, 0, 0);
   display: flex;
   height: 100vh;
   width: auto;
   align-items: center;
   gap: 2.5vmin;
-  position: fixed;
+  position: absolute;
   transform: translateX(25%);
-  /* transition: animation 1200ms ease-in-out; */
-  transition: 1200ms ease-in-out;
   user-select: none; /* -- Prevent image highlighting --  */
 }
 
 #image-track > .image {
+  scroll-behavior: smooth;
   width: 34vmin;
   height: 50vh;
   object-fit: cover;
   background-position: center;
   object-position: 100%;
-  transition: object-position 1200ms ease-in-out;
+  transition: object-position 2500ms cubic-bezier(0.25, 0.51, 0.29, 1);
   animation: heightCompression 1.5s ease-in-out;
-  transition: 0.7s ease-in-out;
+  transition: transform 2.5s cubic-bezier(0.25, 0.51, 0.29, 1);
   animation-fill-mode: forwards;
 }
 
@@ -56,13 +93,6 @@ body::-webkit-scrollbar {
 }
 #image-track:nth-child(2) {
   animation-delay: 0.8s;
-}
-
-.conatiner-scroll {
-  top: 0;
-  height: 17000vh;
-  width: 100vw;
-  background: transparent;
 }
 
 @keyframes slideInFromLeft {
@@ -92,6 +122,7 @@ body::-webkit-scrollbar {
   width: 100vw;
   /* transform: translate(-50%, 50%); */
   background-position: center;
+  transform: translateX(-50%);
   object-fit: cover;
   transition: all 0.9s;
   object-fit: cover;

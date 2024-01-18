@@ -1,6 +1,6 @@
-import { Main } from "@/components"
+import {  Page } from "@/components"
 export default function Home() {
   return (
-       <Main/>
+    <Page/>
   )
 }

@@ -1,17 +1,20 @@
+.social {
+  position: fixed;
+  left: 1rem;
+  top: 50%;
+  z-index: 345;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-50%);
+}
 
-/* Social */
-
-.social{
-    position: fixed;
-    /* bottom: 2rem; */
-    display: flex;
-    background:transparent;
-    align-items: center;
-    justify-content: center;
-    height: max-content;
-    z-index: 234;
-  
-  }
-  Link{
-    color: red;
-  }
+.social-icons {
+  color: white;
+  margin: 0.8rem;
+  padding-left: 10px;
+  font-size: 1.5rem;
+  border-left: 1px solid grey;
+}
+.social-icons:hover {
+  border-left: 1px solid white;
+}

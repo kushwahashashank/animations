@@ -117,7 +117,6 @@ body::-webkit-scrollbar {
   z-index: 7;
   top: calc(50% + 17.7%);
   left: calc(50% + 1.38%);
-
   object-fit: contain;
 }
 
@@ -142,7 +141,6 @@ body::-webkit-scrollbar {
 }
 .text {
   position: absolute;
-
   left: 50%;
   top: calc(50% - 10.4%);
   z-index: 13;
@@ -152,21 +150,56 @@ body::-webkit-scrollbar {
 }
 
 .text h2 {
+  z-index: 13;
   font-weight: 1000;
   font-size: 7rem;
-  color: rgba(1, 17, 11, 0.869);
+  color: rgba(1, 17, 11, 0.9);
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 .text h1 {
+  z-index: 13;
   font-weight: 800;
   font-size: 10rem;
   color: transparent;
   /* -webkit-text-fill-color: rgba(255, 255, 255, 0.143);  */
-  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
 }
-
+.buttons {
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  top: 70%;
+  left: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 22;
+  display: flex;
+  justify-content: center;
+}
+.resume {
+  z-index: 23;
+  display: flex;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  margin: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 3px;
+}
+.contact-page {
+  display: flex;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  margin: 0.5rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(0, 0, 0);
+  border-radius: 3px;
+}
 .mountain-6 {
   animation: mountain-6-bottomUp 1s ease-in-out;
   position: absolute;
@@ -333,9 +366,3 @@ body::-webkit-scrollbar {
   left: 50%;
   object-fit: cover;
 }
-
-
-
-
-
-
