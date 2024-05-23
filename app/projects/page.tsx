@@ -1,4 +1,4 @@
-import {Projects} from "../../components"
+import {Projects,Test} from "../../components"
 
 export default function page()  {
   return (

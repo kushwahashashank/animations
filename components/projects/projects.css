@@ -3,7 +3,7 @@ body {
   margin: 0rem;
   padding: 0;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   -ms-overflow-style: none;
   scrollbar-width: none;
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:white;font-size:24px;'><text y='50%'>⦿</text></svg>")
@@ -27,19 +27,17 @@ body::-webkit-scrollbar {
   width: 100vw;
   position: relative;
   /* top: 0; */
-  transition: transform 2s cubic-bezier(0.25, 0.51, 0.29, 1);
+  transition: transform 1s ease;
   /* scroll-behavior: smooth; */
 }
 .image-wrapper-hold {
-  z-index: 400;
-  position: fixed;
-  top: 0;
+  /* z-index: 400; */
+  position: -webkit-sticky;
 }
 
 .conatiner-scroll {
-  top: 0;
   /* position: absolute; */
-  position: static;
+  position: relative;
   z-index: 4000;
   height: 500vh;
   width: 100vw;
@@ -64,7 +62,7 @@ body::-webkit-scrollbar {
   width: auto;
   align-items: center;
   gap: 2.5vmin;
-  position: absolute;
+  /* position: absolute; */
   transform: translateX(25%);
   user-select: none; /* -- Prevent image highlighting --  */
 }
@@ -75,7 +73,7 @@ body::-webkit-scrollbar {
   height: 50vh;
   object-fit: cover;
   background-position: center;
-  object-position: 100%;
+  /* object-position: 100%; */
   transition: object-position 2500ms cubic-bezier(0.25, 0.51, 0.29, 1);
   animation: heightCompression 1.5s ease-in-out;
   transition: transform 2.5s cubic-bezier(0.25, 0.51, 0.29, 1);

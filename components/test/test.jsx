@@ -1,86 +1,104 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-const Cell = ({ value, onChange, isSelected }) => {
-  const handleKeyDown = (e) => {
-    // Handle arrow key navigation
-    if (
-      e.key === "ArrowUp" ||
-      e.key === "ArrowDown" ||
-      e.key === "ArrowLeft" ||
-      e.key === "ArrowRight"
-    ) {
-      e.preventDefault();
-    }
+// import React from 'react'
 
-    // Handle arrow key navigation
-    switch (e.key) {
-      case "ArrowUp":
-        // Handle moving up
-        break;
-      case "ArrowDown":
-        // Handle moving down
-        break;
-      case "ArrowLeft":
-        // Handle moving left
-        break;
-      case "ArrowRight":
-        // Handle moving right
-        break;
-      default:
-        break;
-    }
-  };
-
+function test() {
   return (
-    <input
-      type="text"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      onKeyDown={handleKeyDown}
-      style={{ border: isSelected ? "2px solid blue" : "1px solid #ccc" }}
-    />
-  );
-};
-
-const Grid = ({ rows, cols }) => {
-  const [grid, setGrid] = useState([]);
-
-  useEffect(() => {
-    // Initialize the grid with empty values
-    const newGrid = Array.from({ length: rows }, () => Array(cols).fill(""));
-    setGrid(newGrid);
-  }, [rows, cols]);
-
-  const handleCellChange = (row, col, value) => {
-    const newGrid = [...grid];
-    newGrid[row][col] = value;
-    setGrid(newGrid);
-  };
-
-  return (
-    <div>
-      {grid.map((row, rowIndex) => (
-        <div key={rowIndex} style={{ display: "flex" }}>
-          {row.map((cell, colIndex) => (
-            <Cell
-              key={colIndex}
-              value={cell}
-              onChange={(value) => handleCellChange(rowIndex, colIndex, value)}
-              //  isSelected={/* Implement logic to check if this cell is selected */}
+    <>
+      <div class="wrapper">
+        <div class="container scrollx">
+          <svg
+            viewBox="0 0 900 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z"
+              fill="#D9D9D9"
             />
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-};
+            <mask
+              id="mask0_0_1"
+              style="mask-type:alpha"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="0"
+              width="900"
+              height="10"
+            >
+              <path
+                d="M9.89998 6C9.43671 8.28224 7.41896 10 5 10C2.23858 10 0 7.76142 0 5C0 2.23858 2.23858 0 5 0C7.41896 0 9.43671 1.71776 9.89998 4H445.1C445.563 1.71776 447.581 0 450 0C452.419 0 454.437 1.71776 454.9 4H890.1C890.563 1.71776 892.581 0 895 0C897.761 0 900 2.23858 900 5C900 7.76142 897.761 10 895 10C892.581 10 890.563 8.28224 890.1 6H454.9C454.437 8.28224 452.419 10 450 10C447.581 10 445.563 8.28224 445.1 6H9.89998Z"
+                fill="#D9D9D9"
+              />
+            </mask>
+            <g mask="url(#mask0_0_1)">
+              <rect class="mask" y="-49" height="99" fill="black" />
+            </g>
+          </svg>
+          <section class="sec1 pin">
+            <span>Advanced</span>
+            <h1>Signify Elegance</h1>
 
-export default function Arrow() {
-  return (
-    <div>
-      <h1>Grid App</h1>
-      <Grid rows={3} cols={3} />
-    </div>
+            <div class="col">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit
+                sed massa turpis in. Sit praesent arcu leo lectus pellentesque.
+                Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis
+                risus amet urna. Urna egestas lorem.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit
+                sed massa turpis in. Sit praesent arcu leo lectus pellentesque.
+                Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis
+                risus amet urna. Urna egestas lorem.
+              </p>
+            </div>
+          </section>
+          <section class="sec2 pin">
+            <span class="anim">Advanced</span>
+            <h1 class="anim">Signify Elegance</h1>
+
+            <div class="col anim">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit
+                sed massa turpis in. Sit praesent arcu leo lectus pellentesque.
+                Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis
+                risus amet urna. Urna egestas lorem.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit
+                sed massa turpis in. Sit praesent arcu leo lectus pellentesque.
+                Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis
+                risus amet urna. Urna egestas lorem.
+              </p>
+            </div>
+          </section>
+          <section class="sec3 pin">
+            <span class="anim">Advanced</span>
+            <h1 class="anim">Signify Elegance</h1>
+
+            <div class="col anim">
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit
+                sed massa turpis in. Sit praesent arcu leo lectus pellentesque.
+                Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis
+                risus amet urna. Urna egestas lorem.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Egestas euismod nec sit
+                sed massa turpis in. Sit praesent arcu leo lectus pellentesque.
+                Ornare elit orci morbi volutpat. Ut fermentum lorem morbi quis
+                risus amet urna. Urna egestas lorem.
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section style="background-color: lightblue;"></section>
+    </>
   );
 }
+
+export default test
+   

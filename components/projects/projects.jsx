@@ -7,14 +7,12 @@ import Image from "next/image";
 const navbar = () => {
   // states for scroll control
   const [scrollTop, setScrollTop] = useState(0);
-  const [prevpercentage, setPrevpercentage] = useState(0);
+  const [prevpercentage, setPrevpercentage] = useState(25);
 
   // Function for scroll animation
   useEffect(() => {
     const handleScroll = () => {
       const scrollConatiner = document.querySelector(".conatiner-scroll");
-      // const scrollConatiner_Yoffset =
-      //   scrollConatiner.getBoundingClientRect().top;
 
       const target = document.querySelector(".image-warpper");
       const target_Yoffset = target.getBoundingClientRect().top;
@@ -27,10 +25,7 @@ const navbar = () => {
         nextPercentageUnconstrained = prevpercentage + percentage;
 
       let nextPercentage = prevpercentage + percentage;
-      // nextPercentage = Math.max(
-      //   Math.min(nextPercentageUnconstrained, 25),
-      //   -70
-      // );
+
       const nextPercentageMove = Math.max(
         Math.min(nextPercentageUnconstrained, 25),
         -70
@@ -58,7 +53,6 @@ const navbar = () => {
           }
           if (nextPercentage < -70) {
             scrollConatiner.classList.add("make-top100");
-            // scrollConatiner.style.display = "none";
 
             target.classList.remove("image-wrapper-hold");
             target.style.display = "table-footer-group";
@@ -95,55 +89,7 @@ const navbar = () => {
           setPrevpercentage(nextPercentage);
         }
       }
-      // if (target_Yoffset <= 0) {
-      //   if (nextPercentage <= -70 && prevpercentage == -70) {
-      //     scrollConatiner.style.display = "none";
-      //     target.classList.remove("image-wrapper-hold");
-      //   } else if (nextPercentage >= 25 && prevpercentage == 25) {
-      //     scrollConatiner.style.display = "flex";
-      //     target.classList.remove("image-wrapper-hold");
-      //   } else if (nextPercentage >= -70 && nextPercentage <= 25) {
-      //     if (nextPercentage < prevpercentage && target_Yoffset <= 0) {
-      //       target.classList.add("image-wrapper-hold");
-      //       track.animate(
-      //         {
-      //           transform: `translateX(${nextPercentage}%)`,
-      //         },
-      //         { duration: 3000, fill: "forwards" }
-      //       );
-      //       for (const image of track.getElementsByClassName("image")) {
-      //         image.animate(
-      //           {
-      //             objectPosition: `${70 + nextPercentage}% center`,
-      //           },
-      //           { duration: 5000, fill: "forwards" }
-      //         );
-      //       }
-      //       setPrevpercentage(nextPercentage);
-      //     } else if (nextPercentage >= prevpercentage && target_Yoffset >= 0) {
-      //       target.classList.add("image-wrapper-hold");
-      //       track.animate(
-      //         {
-      //           transform: `translateX(${nextPercentage}%)`,
-      //         },
-      //         { duration: 3000, fill: "forwards" }
-      //       );
-      //       for (const image of track.getElementsByClassName("image")) {
-      //         image.animate(
-      //           {
-      //             objectPosition: `${70 + nextPercentage}% center`,
-      //           },
-      //           { duration: 5000, fill: "forwards" }
-      //         );
-      //       }
-      //       setPrevpercentage(nextPercentage);
-      //     }
-      //   } else {
-      //     target.classList.remove("image-wrapper-hold");
-      //   }
-      // }
       setScrollTop(window.scrollY);
-      // console.log("scrolloffset", -scrollConatiner_Yoffset);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -154,7 +100,7 @@ const navbar = () => {
   }, [scrollTop]);
 
   return (
-    <div className="table-div">
+    <div className="conatiner-scroll">
       <div className="image-warpper">
         <div id="image-track">
           {/* <Image className="image" src={aboutimage} draggable="false" /> */}
@@ -200,7 +146,6 @@ const navbar = () => {
           />
         </div>
       </div>
-      <div className="conatiner-scroll"></div>
     </div>
   );
 };

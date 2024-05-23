@@ -1,24 +1,53 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { About, Social, Projects, Main, Contact } from "../components";
+gsap.registerPlugin(ScrollTrigger);
 const page = () => {
-  // styles = {{
-  //   top= "0",
-  // z-index 4000;
-  // height: 17000vh;
-  // width: 100vw;
-  // color: rgb(62, 62, 62);
-  // background: transparent;
-  // }
-  // }
+  // const project_container = document.querySelector(".projects");
+  // let project_width = project_container.offsetWidth;
+
+  const container = useRef();
+  // const amount_scroll = window.innerWidth - container.current.offsetWidth;
+  function getScrollAmount() {
+    // let racesWidth = races.scrollWidth;
+    return -window.innerWidth;
+  }
+  useGSAP(
+    () => {
+      const tween = gsap.to(container, {
+        x: getScrollAmount,
+        duration: 3,
+        ease: "none",
+      });
+
+      ScrollTrigger.create({
+        trigger: ".projects-wrapper",
+        start: "top 20%",
+        end: () => `+=${getScrollAmount() * -1}`,
+        pin: true,
+        animation: tween,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        markers: true,
+      });
+    },
+    { scope: container }
+  );
+
   return (
     <>
-      <div style={{ scrollBehavior: "smooth" }}>
-        <Main />
-        <Social />
-        <About />
-        <Projects />
+      <div className="parent" style={{ scrollBehavior: "smooth" }}>
+        {/* <Main /> */}
+        <About className="about" />
+        <div className="projects-wrapper">
+          <Projects ref={container} className="projects" />
+        </div>
         <Contact />
       </div>
+      <Social />
     </>
   );
 };

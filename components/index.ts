@@ -5,5 +5,5 @@ import { Context } from "./context/store";
 import Social from "./social/social";
 import Page from "./page";
 import Contact from "./contact/contact";
-
-export { Projects, Context, Contact, Main, About, Social, Page };
+import Test from "./test/test";
+export { Projects, Context, Contact, Main, About, Social, Test, Page };

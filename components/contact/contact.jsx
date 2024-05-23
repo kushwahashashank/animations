@@ -6,7 +6,7 @@ import Pen from "../Assests/penimages/pen.png";
 import Cap from "../Assests/penimages/cap.png";
 const contact = () => {
   // states for scroll control
-  const [scrollPen, setScrollPen] = useState(0);
+  const [scrollPens, setScrollPens] = useState(0);
   const [open, setOpen] = useState(false);
   // Function for scroll animation
   useEffect(() => {
@@ -51,7 +51,7 @@ const contact = () => {
         }
       }
 
-      setScrollPen(window.scrollY);
+      setScrollPens(window.scrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -59,7 +59,7 @@ const contact = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollPen]);
+  }, [scrollPens]);
   return (
     <div className="contact ">
       <div className="pen-open">
@@ -70,7 +70,7 @@ const contact = () => {
       <h2 className="h2text">GET IN TOUCH</h2>
       <div id="contact_form" className="contact1 contac">
         <div className="contact__container">
-          <form className="contact-form">
+          <div className="contact-form">
             <input
               type="text"
               name="name"
@@ -92,7 +92,7 @@ const contact = () => {
             <button type="submit" className="btn-submit">
               Submit
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>

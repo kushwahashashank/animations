@@ -1,70 +1,36 @@
-/* .about-container{
-    display: flex;
-    height: max-content;
-    padding: 4rem 17% 2rem 17%;
-    background-color: rgb(15, 39, 41);
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 800;
-    position: absolute;
-    
-}
-.intro{
-    
-    display: flex;
-    text-align: center;
-
-    color: rgb(46, 165, 153);
-
-}
- */
-
 .container {
-  height: max-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2rem 15% 2rem 15%;
-  /* background-color:rgb(100,136,132); */
-  background-color: rgba(0, 0, 0);
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  padding: 20rem 15% 20rem 15%;
 }
 
 .header {
-  margin: 1.5rem 0;
-  font-size: 4rem;
-  /* color: rgb(42, 81, 62); */
-  color: rgb(157, 157, 159);
-}
-
-p {
-  margin: 0.5rem 0;
+  /* margin: 1.5rem 0; */
   font-size: 2rem;
-  color: rgb(42, 81, 62);
+  /* color: rgba(255, 255, 255, 0.2); */
 }
 
-/* animation class and keyframes */
-.overflow-hidden {
-  overflow: hidden;
+.about-content {
+  /* margin: 0.5rem 0; */
+  font-size: 2rem;
+  /* color: rgba(255, 255, 255, 0.2); */
 }
 
-.animation > div > h1:nth-child(1) {
-  animation: drop-in 1s ease 200ms backwards;
-}
-.animation > div > h1:nth-child(2) {
-  animation: drop-in 1s ease 400ms backwards;
-}
-.animation > div > h1:nth-child(3) {
-  /* background-color: red; */
-  animation: drop-in 1s ease 600ms backwards;
+.container-span {
+  color: rgba(255, 255, 255, 0.2);
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-image: linear-gradient(90deg, red, blue);
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view(y);
 }
 
-@keyframes drop-in {
-  from {
-    opacity: 0;
-    transform: translateY(-100px);
+@keyframes scroll-reveal {
+  0% {
+    background-size: 0%, 100%;
   }
-  to {
-    opacity: 1;
-    transform: translate(0px);
+  100% {
+    background-size: 100%, 100%;
   }
 }
