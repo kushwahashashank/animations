@@ -1,6 +1,11 @@
-import {  Page } from "@/components"
+import {  About, Contact, Projects, Social } from "@/components"
 export default function Home() {
   return (
-    <Page/>
+  <>
+    <About/>
+    <Projects/>
+    <Contact/>
+    <Social/>
+  </>
   )
 }
