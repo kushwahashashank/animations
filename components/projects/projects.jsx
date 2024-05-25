@@ -117,22 +117,18 @@ const Projects = () => {
         translateX: 0,
       },
       {
+        // ScrollSmoother: true,
         translateX: -currentWidth,
-        ease: "none",
-        duration: 6,
         scrollTrigger: {
           trigger: triggerRef.current,
           start: "top top",
-          end: "2000 top",
-          scrub: 0.6,
+          end: "bottom top",
+          scrub: 2,
           pin: true,
         },
       }
     );
     return () => {
-      {
-        /* A return function for killing the animation on component unmount */
-      }
       pin.kill();
     };
   }, []);

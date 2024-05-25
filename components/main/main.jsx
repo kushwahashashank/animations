@@ -27,12 +27,11 @@ import black_shadow from "../Assests/mountains/black_shadow.png";
 import fog_1 from "../Assests/mountains/fog_1.png";
 import { useContext } from "react";
 import { StateContext } from "../context/store";
-const main = () => {
-  const [loaded, setLoaded] = useState(false);
-
-  document.addEventListener("readystatechange", (e) => {
-    setLoaded(true);
-  });
+const Main = () => {
+  const [loaded, setLoaded] = useState(true);
+  // document.addEventListener("readystatechange", (e) => {
+  //   setLoaded(true);
+  // });
 
   // states for mousemove control and rotation degree
 
@@ -304,4 +303,4 @@ const main = () => {
     </>
   );
 };
-export default main;
+export default Main;
