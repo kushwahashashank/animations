@@ -50,7 +50,6 @@ const contact = () => {
           scrollCheck.classList.remove("pen-open_container");
         }
       }
-
       setScrollPens(window.scrollY);
     };
 
@@ -88,7 +87,7 @@ const contact = () => {
               rolorem
               placeholder="Your Message"
               required
-            ></textarea>
+            />
             <button type="submit" className="btn-submit">
               Submit
             </button>

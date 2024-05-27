@@ -1,108 +1,44 @@
 "use client";
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./projects.css";
-// import aboutimage from "../Assests/NavImages/about.png";
-// import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const Projects = () => {
-  // states for scroll control
-  // const [scrollTop, setScrollTop] = useState(0);
-  // const [prevpercentage, setPrevpercentage] = useState(25);
-
-  // Function for scroll animation
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollConatiner = document.querySelector(".conatiner-scroll");
-
-  //     const target = document.querySelector(".image-warpper");
-  //     const target_Yoffset = target.getBoundingClientRect().top;
-
-  //     let mouseDelta = scrollTop - window.scrollY,
-  //       maxDelta = window.innerHeight;
-
-  //     const track = document.getElementById("image-track");
-  //     const percentage = (mouseDelta / maxDelta) * 80,
-  //       nextPercentageUnconstrained = prevpercentage + percentage;
-
-  //     let nextPercentage = prevpercentage + percentage;
-
-  //     const nextPercentageMove = Math.max(
-  //       Math.min(nextPercentageUnconstrained, 25),
-  //       -70
-  //     );
-  //     if (nextPercentage <= prevpercentage) {
-  //       if (target_Yoffset <= 0) {
-  //         target.style.display = "flex";
-  //         scrollConatiner.classList.remove("make-top100");
-  //         scrollConatiner.style.display = "flex";
-
-  //         target.classList.add("image-wrapper-hold");
-  //         track.animate(
-  //           {
-  //             transform: `translateX(${nextPercentageMove}%)`,
-  //           },
-  //           { duration: 2000, fill: "both" }
-  //         );
-  //         for (const image of track.getElementsByClassName("image")) {
-  //           image.animate(
-  //             {
-  //               objectPosition: `${70 + nextPercentageMove}% center`,
-  //             },
-  //             { duration: 2500, fill: "both" }
-  //           );
-  //         }
-  //         if (nextPercentage < -70) {
-  //           scrollConatiner.classList.add("make-top100");
-
-  //           target.classList.remove("image-wrapper-hold");
-  //           target.style.display = "table-footer-group";
-  //           scrollConatiner.style.display = "none";
-  //         }
-  //         setPrevpercentage(nextPercentage);
-  //       }
-  //     } else {
-  //       if (target_Yoffset >= 0) {
-  //         target.style.display = "table-footer-group";
-  //         scrollConatiner.classList.remove("make-top100");
-  //         scrollConatiner.style.display = "flex";
-
-  //         target.classList.add("image-wrapper-hold");
-  //         track.animate(
-  //           {
-  //             transform: `translateX(${nextPercentageMove}%)`,
-  //           },
-  //           { duration: 2000, fill: "both" }
-  //         );
-  //         for (const image of track.getElementsByClassName("image")) {
-  //           image.animate(
-  //             {
-  //               objectPosition: `${70 + nextPercentageMove}% center`,
-  //             },
-  //             { duration: 2500, fill: "both" }
-  //           );
-  //         }
-  //         if (nextPercentage > 25) {
-  //           target.style.display = "flex";
-  //           target.classList.remove("image-wrapper-hold");
-  //           scrollConatiner.style.display = "none";
-  //         }
-  //         setPrevpercentage(nextPercentage);
-  //       }
-  //     }
-  //     setScrollTop(window.scrollY);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [scrollTop]);
-
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
   const trackRef = useRef(null);
+
+  // states for scroll control
+  const [prevxoffset, setPrevxoffset] = useState(
+    (40 * window.innerWidth) / 100
+  );
+  // if (trackRef.current) {
+  //   setPrevxoffset(trackRef.current.getBoundingClientRect().left);
+  // }
+  // Function for scroll animation
+  useEffect(() => {
+    const handleScroll = () => {
+      const Xoffset = trackRef.current.getBoundingClientRect().left;
+      const percentageChange = ((prevxoffset - Xoffset) * 3.5) / 100;
+      console.log(Xoffset, "X", prevxoffset);
+      console.log(percentageChange);
+      if (Xoffset < prevxoffset) {
+        for (const image of trackRef.current.getElementsByClassName("image")) {
+          image.animate(
+            {
+              objectPosition: `${70 - percentageChange}% center`,
+            },
+            { duration: 2200, fill: "both" }
+          );
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -117,13 +53,13 @@ const Projects = () => {
         translateX: 0,
       },
       {
-        // ScrollSmoother: true,
+        duration: 2,
         translateX: -currentWidth,
         scrollTrigger: {
           trigger: triggerRef.current,
           start: "top top",
           end: "bottom top",
-          scrub: 2,
+          scrub: 1,
           pin: true,
         },
       }
