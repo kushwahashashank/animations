@@ -18,6 +18,7 @@ body::-webkit-scrollbar {
 .image-warpper {
   background-color: rgb(0, 0, 0);
   overflow: hidden;
+  width: 100vw;
 }
 .image-warpper-inner {
   height: 100vh;

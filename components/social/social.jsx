@@ -1,38 +1,51 @@
 import React from "react";
 import Link from "next/link";
-import {
-  FaInstagram,
-  FaLinkedinIn,
-  FaGithub,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { GiMonkey } from "react-icons/gi";
+// import { Tooltip } from "react-tooltip";
+import { FaInstagram, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 import "./social.css";
+import Tooltip from "../Tooltip/Tooltip";
 const social = () => {
   return (
     <div className="social">
-      <Link
-        href="https://www.instagram.com/_kushwaha_shashank_/"
-        target="_blank"
-      >
-        <FaInstagram className="social-icons" />
-      </Link>
-      <Link
-        href="https://www.linkedin.com/in/kushwahashashank/"
-        target="_blank"
-      >
-        <FaLinkedinIn className="social-icons" />
-      </Link>
+      <Tooltip content="Follow me on Instagram" direction="top">
+        <Link
+          href="https://www.instagram.com/_kushwaha_shashank_/"
+          target="_blank"
+        >
+          <FaInstagram className="social-icons" />
+        </Link>
+      </Tooltip>
 
-      <Link href="https://github.com/kushwahashashank/" target="_blank">
-        <FaGithub className="social-icons" />
-      </Link>
-      <Link
-        href="https://api.whatsapp.com/send/?phone=%2B918081637834&text&type=phone_number&app_absent=0"
-        target="_blank"
-      >
-        <FaWhatsapp className="social-icons" />
-      </Link>
+      <Tooltip content="Connect with me on LinkedIn" direction="top">
+        <Link
+          href="https://www.linkedin.com/in/kushwahashashank/"
+          target="_blank"
+        >
+          <FaLinkedinIn className="social-icons" />
+        </Link>
+      </Tooltip>
+
+      <Tooltip content="My Github Profile" direction="top">
+        <Link href="https://github.com/kushwahashashank/" target="_blank">
+          <FaGithub className="social-icons" />
+        </Link>
+      </Tooltip>
+      <Tooltip content="My Competitive Programming Profile" direction="top">
+        <Link href="https://clist.by/coder/kushwahashashank/" target="_blank">
+          <GiMonkey className="social-icons" />
+        </Link>
+      </Tooltip>
+
+      {/* <Tooltip
+        id="github"
+        style={{
+          maxWidth: "10rem",
+          textAlign: "center",
+        }}
+        variant="light"
+      /> */}
     </div>
   );
 };

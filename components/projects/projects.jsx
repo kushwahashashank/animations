@@ -7,14 +7,18 @@ const Projects = () => {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
   const trackRef = useRef(null);
-
   // states for scroll control
   const [prevxoffset, setPrevxoffset] = useState(
-    (40 * window.innerWidth) / 100
+    process.browser ? (40 * window.innerWidth) / 100 : 0
   );
-  // if (trackRef.current) {
-  //   setPrevxoffset(trackRef.current.getBoundingClientRect().left);
-  // }
+
+  // useEffect(() => {
+  //   if (triggerRef.current) {
+  //     setPrevxoffset(
+  //       (40 * document.getElementsByName("image-warpper").offsetWidth) / 100
+  //     );
+  //   }
+  // }, []);
   // Function for scroll animation
   useEffect(() => {
     const handleScroll = () => {
@@ -33,10 +37,10 @@ const Projects = () => {
         }
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    document.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -58,7 +62,8 @@ const Projects = () => {
         scrollTrigger: {
           trigger: triggerRef.current,
           start: "top top",
-          end: "bottom top",
+          end: "140% top",
+          // markers: true,
           scrub: 1,
           pin: true,
         },
