@@ -3,13 +3,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20rem 10% 20rem 10%;
+  padding: 5rem 5% 5rem 5%;
   text-align: justify;
   color: rgb(255, 255, 255);
 }
 
 .about-content {
-  font-size: 6rem;
+  font-size: 5rem;
   text-align: justify;
   font-weight: bolder;
 }

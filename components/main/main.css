@@ -326,9 +326,8 @@
   position: absolute;
   width: 65.97%;
   z-index: 18;
-  top: calc(50% + 28.8%);
+  top: calc(50% + 40.8%);
   left: calc(50% - 40.55%);
-
   object-fit: contain;
 }
 @keyframes mountain-1-bottomUp {
@@ -337,7 +336,7 @@
   }
 
   100% {
-    top: calc(50% + 28.8%);
+    top: calc(50% + 40.8%);
   }
 }
 .sun_rays {

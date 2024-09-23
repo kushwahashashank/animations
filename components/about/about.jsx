@@ -39,7 +39,7 @@ const About = () => {
         duration: 5,
         scrollTrigger: {
           trigger: texttriggerRef.current,
-          start: "top 20%",
+          start: "top 50%",
           end: "bottom bottom",
           scrub: true,
           // markers: true,
@@ -55,7 +55,15 @@ const About = () => {
           Hi, This is Abhishek Kushwaha, full stack developer and am artist
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint facilis
           adipisci consectetur cupiditate eveniet accusamus veritatis? Saepe,
-          quae blanditiis non voluptatum quibusdam incidunt!
+          quae blanditiis non voluptatum quibusdam incidunt Hi, This is Abhishek
+          Kushwaha, full stack developer and am artist Lorem ipsum dolor sit,
+          amet consectetur adipisicing elit. Sint facilis adipisci consectetur
+          cupiditate eveniet accusamus veritatis? Saepe, quae blanditiis non
+          voluptatum quibusdam incidunt! Hi, This is Abhishek Kushwaha, full
+          stack developer and am artist Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Sint facilis adipisci consectetur cupiditate eveniet
+          accusamus veritatis? Saepe, quae blanditiis non voluptatum quibusdam
+          incidunt!
         </p>
       </div>
     </>
