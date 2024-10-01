@@ -93,14 +93,14 @@ const styles = {
   circleBackground: {
     fill: "none",
     stroke: "black", // Base color of the circle
-    strokeWidth: 0.5,
+    strokeWidth: 0.5 as any,
   },
   circleProgress: {
     fill: "none",
     stroke: "white", // Color of the progress
     strokeWidth: 0.5,
-    strokeLinecap: "round", // Use valid values for strokeLinecap
-    strokeDasharray: "0, 100", // Initial progress
+    strokeLinecap: "round" as any, // Use valid values for strokeLinecap
+    strokeDasharray: "0, 100" as any, // Initial progress
     transition: "stroke-dasharray 0.3s ease", // Smooth transition
   },
   text: {
