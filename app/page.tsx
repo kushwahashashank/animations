@@ -44,7 +44,7 @@ export default function Home() {
             <path
               style={{
                 ...styles.circleProgress,
-                strokeDasharray: `${progress}, 100`,
+                strokeDasharray: `${progress}, 100` as any,
               }}
               d="M18 2.0845
                  a 15.9155 15.9155 0 0 1 0 31.831
@@ -72,6 +72,7 @@ export default function Home() {
 }
 
 // Styling for the loader and centering
+// Styling for the loader and centering
 const styles = {
   loaderContainer: {
     display: "flex",
@@ -92,20 +93,19 @@ const styles = {
   circleBackground: {
     fill: "none",
     stroke: "black", // Base color of the circle
-    strokeWidth: "0.5",
+    strokeWidth: 0.5,
   },
   circleProgress: {
     fill: "none",
     stroke: "white", // Color of the progress
-    strokeWidth: "0.5",
-    strokeLinecap: "round",
+    strokeWidth: 0.5,
+    strokeLinecap: "round", // Use valid values for strokeLinecap
     strokeDasharray: "0, 100", // Initial progress
     transition: "stroke-dasharray 0.3s ease", // Smooth transition
   },
   text: {
     fill: "white", // Color of the percentage text
     fontSize: "6px",
-    // fontWeight: "bold",
     textAnchor: "middle",
   },
 };
