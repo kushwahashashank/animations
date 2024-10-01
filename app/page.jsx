@@ -44,7 +44,7 @@ export default function Home() {
             <path
               style={{
                 ...styles.circleProgress,
-                strokeDasharray: `${progress}, 100` as any,
+                strokeDasharray: `${progress}, 100`,
               }}
               d="M18 2.0845
                  a 15.9155 15.9155 0 0 1 0 31.831
@@ -93,14 +93,14 @@ const styles = {
   circleBackground: {
     fill: "none",
     stroke: "black", // Base color of the circle
-    strokeWidth: 0.5 as any,
+    strokeWidth: 0.5,
   },
   circleProgress: {
     fill: "none",
     stroke: "white", // Color of the progress
     strokeWidth: 0.5,
-    strokeLinecap: "round" as any, // Use valid values for strokeLinecap
-    strokeDasharray: "0, 100" as any, // Initial progress
+    strokeLinecap: "round", // Use valid values for strokeLinecap
+    strokeDasharray: "0, 100", // Initial progress
     transition: "stroke-dasharray 0.3s ease", // Smooth transition
   },
   text: {
