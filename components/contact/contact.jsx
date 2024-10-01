@@ -1,101 +1,165 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import "./contact.css";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Pen from "../Assests/penimages/pen.png";
 import Cap from "../Assests/penimages/cap.png";
-const contact = () => {
-  // states for scroll control
-  const [scrollPens, setScrollPens] = useState(0);
-  const [open, setOpen] = useState(false);
-  // Function for scroll animation
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import "./contact.css";
+
+const Contact = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const cap = useRef(null);
+  const pen = useRef(null);
+  const form = useRef(null);
+  const pentrigger = useRef(null);
+  const button = useRef(null);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollCap = document.querySelector(".cap-pen");
-      const scrollPen = document.querySelector(".pen-pen");
-      const scrollPenAnimate = document.querySelector(".pen-open");
-      const scrollCheck = document.querySelector(".animate-class");
-      const contactBottom = document.querySelector(".contact1");
-      const scrollPenAnimate_Yoffset = scrollCheck.getBoundingClientRect().top;
-      const contactBottom_Yoffset =
-        contactBottom.getBoundingClientRect().bottom;
+    const capEl = cap.current;
+    const penEl = pen.current;
+    const formEl = form.current;
+    const pentriggerEl = pentrigger.current;
 
-      if (scrollPenAnimate_Yoffset - 150 <= window.innerHeight / 2) {
-        if (contactBottom_Yoffset <= 0) {
-          if (open) {
-            setOpen(false);
-            scrollPen.classList.remove("pen-animate");
-            scrollCap.classList.add("cap");
-            scrollCap.classList.remove("cap-animate");
-            scrollPen.classList.add("pen");
-            scrollCheck.classList.remove("pen-open_container");
-          }
-        } else {
-          if (!open) {
-            setOpen(true);
-            scrollPenAnimate.classList.add("pen-open-animate");
-            scrollCheck.classList.add("pen-open_container");
-            scrollCap.classList.add("cap-animate");
-            scrollPen.classList.add("pen-animate");
-          }
-        }
-      } else {
-        if (open) {
-          setOpen(false);
-          scrollPen.classList.remove("pen-animate");
-          scrollCap.classList.add("cap");
-          scrollCap.classList.remove("cap-animate");
-          scrollPen.classList.add("pen");
-          scrollPenAnimate.classList.remove("pen-open-animate");
-          scrollCheck.classList.remove("pen-open_container");
-        }
-      }
-      setScrollPens(window.scrollY);
-    };
+    const capWidth = capEl.getBoundingClientRect().width;
+    const capTranslate = -capEl.getBoundingClientRect().left;
+    const penTranslate = penEl.getBoundingClientRect().right - 1.4 * capWidth;
 
-    window.addEventListener("scroll", handleScroll);
+    capEl.style.transform = `translateX(${capWidth / 2}px)`;
+    penEl.style.transform = `translateX(${-capWidth / 2}px)`;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: pentriggerEl,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        pin: true,
+      },
+    });
+    const change =
+      ((form.current.getBoundingClientRect().bottom -
+        button.current.getBoundingClientRect().bottom) /
+        window.innerHeight) *
+      100;
+    // Timeline animation for opening pen, form movement, and closing pen
+    tl.to(capEl, { translateX: capTranslate, duration: 1 })
+      .to(penEl, { translateX: penTranslate, duration: 1 }, "-=1")
+      .to(formEl, {
+        yPercent: -(200 - change),
+        duration: 8,
+      })
+      .to(capEl, { translateX: capWidth / 2, duration: 0.5 })
+      .to(penEl, { translateX: -(capWidth / 2), duration: 0.5 }, "-=0.5");
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      tl.kill(); // Cleanup on unmount to avoid memory leaks
     };
-  }, [scrollPens]);
+  }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (res.status === 200) {
+        setResponse("Message sent successfully!");
+      } else {
+        setResponse(`Error: ${data.error}`);
+      }
+    } catch (error) {
+      setResponse("An error occurred while sending the message.");
+    }
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+    setLoading(false);
+  };
+
   return (
-    <div className="contact ">
-      <div className="pen-open">
-        <Image className="cap-pen" src={Cap} alt="" />
-        <Image className="pen-pen" src={Pen} alt="" />
-      </div>
-      <div className="animate-class"></div>
-      <h2 className="h2text">GET IN TOUCH</h2>
-      <div id="contact_form" className="contact1 contac">
-        <div className="contact__container">
-          <div className="contact-form">
+    <div className="contact" id="contactid">
+      <div ref={pentrigger} className="animatepen">
+        <div className="pen-open">
+          <Image
+            ref={cap}
+            className="cap-pen"
+            src={Cap}
+            alt="Cap Image"
+            priority
+          />
+          <Image
+            ref={pen}
+            className="pen-pen"
+            src={Pen}
+            alt="Pen Image"
+            priority
+          />
+        </div>
+        <div ref={form} className="contact-form">
+          <h2 className="h2text">GET IN TOUCH</h2>
+          <div className="contact-info">
             <input
               type="text"
               name="name"
-              placeholder="Your Full Name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
               required
             />
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
               required
             />
-            <textarea
-              name="message"
-              rolorem
-              placeholder="Your Message"
-              required
-            />
-            <button type="submit" className="btn-submit">
-              Submit
-            </button>
           </div>
+          <textarea
+            name="message"
+            placeholder="Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+          <button
+            ref={button}
+            type="submit"
+            onClick={handleSubmit}
+            className="btn-submit"
+          >
+            {loading ? "Sending..." : "Send"}
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
-export default contact;
+export default Contact;

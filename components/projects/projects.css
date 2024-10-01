@@ -1,7 +1,7 @@
 body {
   background-color: rgb(0, 0, 0);
   margin: 0rem;
-  padding: 0;
+  padding: 0rem;
   position: relative;
   overflow: hidden;
   -ms-overflow-style: none;
@@ -23,29 +23,70 @@ body::-webkit-scrollbar {
     overflow: hidden;
     width: 100vw;
   }
-  .image-warpper-inner {
-    height: 100vh;
-  }
-
   #image-track {
     background-color: rgb(0, 0, 0);
     display: flex;
     height: 100vh;
-    width: auto;
+    width: max-content;
     align-items: center;
     gap: 1.5rem;
     transform: translateX(40%);
     user-select: none; /* -- Prevent image highlighting --  */
   }
-
-  #image-track > .image {
+  .image-container {
+    width: 22vw;
+    height: 60vh;
+  }
+  .image {
     width: 22vw;
     height: 60vh;
     object-fit: cover;
-    /* object-fit: contain; */
-    /* background-position: center; */
     object-position: 100% center;
-    background-repeat: repeat-x;
-    /* justify-content: left; */
+  }
+  .github-button {
+    position: absolute;
+    /* top: +60vh; */
+    margin-top: 56vh;
+    /* margin-right: 20vw; */
+    margin-left: -21.5vw;
+    z-index: 300;
+    width: 3.5rem;
+    height: 1.5rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+  }
+  .externallink-button {
+    margin-left: -17vw;
+    position: absolute;
+    margin-top: 56vh;
+    z-index: 300;
+    width: 3.5rem;
+    height: 1.5rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+  }
+  .project-title {
+    margin-left: 11vw;
+    position: absolute;
+    margin-top: -31vh;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 1.6rem;
+    text-align: center;
+    /* color: rgb(186, 30, 30); */
+    font-weight: 800;
+    height: 62vh;
+    width: 22vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .project-title:hover {
+    /* background-color: rgba(0, 0, 0, 0.7); */
   }
 }

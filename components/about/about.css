@@ -1,15 +1,47 @@
 .container {
   display: flex;
+  width: 100vw;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem 5% 5rem 5%;
-  text-align: justify;
   color: rgb(255, 255, 255);
 }
 
-.about-content {
-  font-size: 5rem;
+.about-content h2 {
+  padding-left: 5%;
+  padding-top: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+}
+.black-bg {
   text-align: justify;
-  font-weight: bolder;
+  font-size: 4rem;
+  margin: 0rem 5% 0rem 0;
+  padding-left: 5%;
+  font-family: "Lucida Console", "Courier New", monospace;
+  line-height: 4.5rem;
+  padding-bottom: 3rem;
+  padding-top: 4rem;
+
+  border-bottom: 3px solid rgb(24, 54, 43);
+}
+.grey-bg {
+  margin: 0rem 5% 0rem 0;
+  width: 90vw;
+  padding-left: 5%;
+  font-family: "Lucida Console", "Courier New", monospace;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  border-bottom: 3px solid rgb(24, 54, 43);
+}
+.experience {
+  text-align: left;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.white-bg {
+  margin: 0rem 5% 0rem 5%;
+  font-family: "Lucida Console", "Courier New", monospace;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
 }

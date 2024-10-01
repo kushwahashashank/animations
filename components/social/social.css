@@ -1,7 +1,7 @@
 .social {
   position: fixed;
   left: 50%;
-  bottom: 5px;
+  bottom: 0px;
   z-index: 345;
   display: flex;
   transform: translateX(-50%);
@@ -12,6 +12,7 @@
   margin: 0.8rem;
   padding-bottom: 10px;
   font-size: 1.5rem;
+  margin-bottom: 0.2rem;
   border-bottom: 2px solid transparent;
 }
 .social-icons:hover {

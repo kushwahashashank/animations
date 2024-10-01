@@ -27,12 +27,12 @@ const social = () => {
         </Link>
       </Tooltip>
 
-      <Tooltip content="My Github Profile" direction="top">
+      <Tooltip content="Github Profile" direction="top">
         <Link href="https://github.com/kushwahashashank/" target="_blank">
           <FaGithub className="social-icons" />
         </Link>
       </Tooltip>
-      <Tooltip content="My Competitive Programming Profile" direction="top">
+      <Tooltip content="Competitive Programming Profile" direction="top">
         <Link href="https://clist.by/coder/kushwahashashank/" target="_blank">
           <GiMonkey className="social-icons" />
         </Link>
