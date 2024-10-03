@@ -14,6 +14,16 @@ const Contact = () => {
   const form = useRef(null);
   const pentrigger = useRef(null);
   const button = useRef(null);
+  useEffect(() => {
+    const capEl1 = cap.current;
+    const penEl1 = pen.current;
+    capEl1.style.transform = `translateX(${
+      capEl1.getBoundingClientRect().width / 2
+    }px)`;
+    penEl1.style.transform = `translateX(${
+      -capEl1.getBoundingClientRect().width / 2
+    }px)`;
+  }, []);
 
   useEffect(() => {
     const capEl = cap.current;
@@ -24,9 +34,6 @@ const Contact = () => {
     const capWidth = capEl.getBoundingClientRect().width;
     const capTranslate = -capEl.getBoundingClientRect().left;
     const penTranslate = penEl.getBoundingClientRect().right - 1.4 * capWidth;
-
-    capEl.style.transform = `translateX(${capWidth / 2}px)`;
-    penEl.style.transform = `translateX(${-capWidth / 2}px)`;
 
     const tl = gsap.timeline({
       scrollTrigger: {
