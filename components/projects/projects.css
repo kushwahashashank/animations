@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     width: max-content;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.8rem;
     transform: translateX(40%);
     user-select: none; /* -- Prevent image highlighting --  */
   }
@@ -85,6 +85,7 @@ body::-webkit-scrollbar {
     justify-content: center;
     align-items: center;
     display: flex;
+    background-color: rgba(0, 0, 0, 0.06);
   }
   .project-title:hover {
     /* background-color: rgba(0, 0, 0, 0.7); */

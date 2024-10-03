@@ -177,7 +177,7 @@ const Projects = () => {
                   className="project-title"
                   style={{ color: "rgb(254, 213, 67)" }}
                 >
-                  TASK <br /> MANAGER
+                  TO DO <br /> APPLICATION
                 </p>
                 <button className="github-button">GitHub</button>
                 <button className="externallink-button">Live</button>

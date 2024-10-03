@@ -33,14 +33,14 @@ const About = () => {
 
       // Animation
       gsap.from(splitText.chars, {
-        opacity: 0.01,
+        opacity: 0.1,
         ease: "none",
         stagger: 1,
         duration: 5,
         scrollTrigger: {
           trigger: texttriggerRef.current,
           start: "top 50%",
-          end: "bottom bottom-=30%",
+          end: "bottom bottom-=20%",
           scrub: true,
           // markers: true,
         },

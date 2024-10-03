@@ -1,7 +1,10 @@
 import React from "react";
 import "./landing.css";
 import Link from "next/link";
-import { home } from "../Assests/mountains/Home.png";
+// import { home } from "../Assests/mountains/Home.png";
+// import { LiaHandSpockSolid } from "react-icons/lia";
+import { PiHandsPrayingFill } from "react-icons/pi";
+
 const Landing = () => {
   return (
     <div className="landing-container">
@@ -11,7 +14,9 @@ const Landing = () => {
         draggable="false"
       />
       <div className="intro-content">
-        <p className="intro">Hello I'm</p>
+        <p className="intro">
+          नमस्कार <PiHandsPrayingFill />, I'm
+        </p>
         <p className="intro name">
           ABHISHEK <br /> KUSHWAHA
         </p>

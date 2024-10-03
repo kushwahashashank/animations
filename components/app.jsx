@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import { About, Contact, Social, Projects, Landing } from "@/components";
+import { About, Contact, Social, Projects, Landing } from "./index";
 
-export default function Home() {
+export default function App() {
   // State for loading progress
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
@@ -71,7 +71,6 @@ export default function Home() {
   );
 }
 
-// Styling for the loader and centering
 // Styling for the loader and centering
 const styles = {
   loaderContainer: {
