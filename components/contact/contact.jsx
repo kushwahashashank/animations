@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Pen from "../Assests/penimages/pen.png";
-import Cap from "../Assests/penimages/cap.png";
+import Pen from "../Assests/penimages/pen.webp";
+import Cap from "../Assests/penimages/cap.webp";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import "./contact.css";

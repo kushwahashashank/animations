@@ -1,6 +1,15 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import "./projects.css";
+import Image from "next/image";
+import Todo from "../Assests/projectbackground/todo.webp";
+import Audio from "../Assests/projectbackground/audio.webp";
+import Mountains from "../Assests/projectbackground/mountains.webp";
+import Art from "../Assests/projectbackground/art.webp";
+import Car from "../Assests/projectbackground/car.webp";
+import Aidoctor from "../Assests/projectbackground/aidoctor.webp";
+import Weather from "../Assests/projectbackground/weather.webp";
+import Portfolio from "../Assests/projectbackground/portfolio.webp";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 const Projects = () => {
@@ -81,14 +90,13 @@ const Projects = () => {
       {window_width / window_height >= 1.6 ? (
         <>
           <div ref={triggerRef} className="image-warpper">
-            {/* <div ref={sectionRef} className="image-wrapper-inner"> */}
             <div ref={trackRef} id="image-track">
-              {/* <Image className="image" src={aboutimage} draggable="false" /> */}
               <div className="img-container">
-                <img
+                <Image
                   ref={image1}
+                  src={Audio}
                   className="image"
-                  src="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   draggable="false"
                 />
                 <p
@@ -101,9 +109,10 @@ const Projects = () => {
                 <button className="externallink-button">Video</button>
               </div>
               <div className="img-container">
-                <img
+                <Image
                   className="image"
-                  src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={Mountains}
+                  alt="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   draggable="false"
                 />
                 <p className="project-title" style={{ color: "white" }}>
@@ -113,9 +122,10 @@ const Projects = () => {
                 <button className="externallink-button">Live</button>
               </div>
               <div className="img-container">
-                <img
+                <Image
                   className={"image"}
-                  src="https://images.unsplash.com/photo-1452457005517-a0dd81caca2a?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={Art}
+                  alt="https://images.unsplash.com/photo-1452457005517-a0dd81caca2a?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   draggable="false"
                 />
                 <p
@@ -128,9 +138,10 @@ const Projects = () => {
                 <button className="externallink-button">Live</button>
               </div>
               <div className="img-container">
-                <img
+                <Image
                   className="image"
-                  src="https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={Car}
+                  alt="https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   draggable="false"
                 />
                 <p className="project-title" style={{ color: "white" }}>
@@ -141,9 +152,10 @@ const Projects = () => {
               </div>
 
               <div className="img-container">
-                <img
+                <Image
                   className="image"
-                  src="https://plus.unsplash.com/premium_photo-1673953509975-576678fa6710?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={Aidoctor}
+                  alt="https://plus.unsplash.com/premium_photo-1673953509975-576678fa6710?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   draggable="false"
                 />
                 <p
@@ -156,9 +168,10 @@ const Projects = () => {
                 <button className="externallink-button">Video</button>
               </div>
               <div className="img-container">
-                <img
+                <Image
                   className="image"
-                  src="https://images.unsplash.com/photo-1566010503302-2564ae0d47b6?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={Weather}
+                  alt="https://images.unsplash.com/photo-1566010503302-2564ae0d47b6?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   draggable="false"
                 />
                 <p className="project-title" style={{ color: "white" }}>
@@ -168,9 +181,10 @@ const Projects = () => {
                 <button className="externallink-button">Live</button>
               </div>
               <div className="img-container">
-                <img
+                <Image
                   className="image"
-                  src="https://images.unsplash.com/photo-1501159599894-155982264a55?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={Todo}
+                  alt="https://images.unsplash.com/photo-1501159599894-155982264a55?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   draggable="false"
                 />
                 <p
@@ -183,10 +197,11 @@ const Projects = () => {
                 <button className="externallink-button">Live</button>
               </div>
               <div className="img-container">
-                <img
+                <Image
                   ref={image2}
                   className="image"
-                  src="https://images.unsplash.com/photo-1558680174-e8e572f854e2?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  src={Portfolio}
+                  alt="https://images.unsplash.com/photo-1558680174-e8e572f854e2?q=80&w=500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   draggable="false"
                 />
                 <p className="project-title" style={{ color: "white" }}>

@@ -10,6 +10,8 @@
   /* z-index: 400000; */
   /* object-fit: contain; */
   z-index: -1;
+  object-fit: cover;
+  /* bottom: 100vh; */
 }
 .intro-content {
   padding-top: 17vh;
@@ -22,7 +24,7 @@
 }
 .intro {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   /* transform: translateX(50%); */
   /* width: max-content; */
   /* padding-left: 50vw; */
@@ -32,8 +34,8 @@
   font-weight: 1000;
   font-size: 6rem;
   color: rgba(255, 255, 255, 0.2);
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(27, 68, 19);
+  -webkit-text-stroke-width: 1.2px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 
 .landing-buttons {

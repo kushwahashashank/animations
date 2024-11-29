@@ -72,9 +72,8 @@ const About = () => {
           <span className="grey-bg">
             {/* <span> */}
             <span className="experience">
-              Upcomming Specialist Programmer <b>INFOSYS</b> <br /> Software
-              Engineer <b>MAQ SOFTWARE</b> <br /> Software Engineer Intern{" "}
-              <b>RITSWA</b>
+              Specialist Programmer <b>INFOSYS</b> <br /> Software Engineer{" "}
+              <b>MAQ SOFTWARE</b> <br /> Software Engineer Intern <b>RITSWA</b>
             </span>
           </span>
           <h2>EDUCATION</h2>
