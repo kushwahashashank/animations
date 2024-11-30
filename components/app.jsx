@@ -4,7 +4,7 @@ import { About, Contact, Social, Projects, Landing } from "./index";
 
 export default function App() {
   // State for loading progress
-  const [loading, setLoading] = useState(!true);
+  const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {

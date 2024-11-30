@@ -87,7 +87,4 @@ body::-webkit-scrollbar {
     display: flex;
     background-color: rgba(0, 0, 0, 0.06);
   }
-  .project-title:hover {
-    /* background-color: rgba(0, 0, 0, 0.7); */
-  }
 }
