@@ -7,11 +7,13 @@
   color: rgb(255, 255, 255);
 }
 
-.about-content h2 {
+.about-head {
   padding-left: 5%;
   padding-top: 3rem;
   font-family: Arial, Helvetica, sans-serif;
   width: 100vw;
+  font-size: 2rem;
+  font-weight: 500;
 }
 .black-bg {
   text-align: justify;
@@ -51,7 +53,7 @@
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
-  .about-content h2 {
+  .about-head {
     font-size: 1.25rem;
     padding-top: 1rem;
   }
@@ -88,7 +90,7 @@
 }
 
 @media (max-width: 480px) {
-  .about-content h2 {
+  .about-head {
     font-size: 1rem;
     padding-top: 1rem;
   }

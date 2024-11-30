@@ -2,8 +2,6 @@ import React from "react";
 import "./landing.css";
 import Image from "next/image";
 import Link from "next/link";
-// import { home } from "../Assests/mountains/Home.png";
-// import { LiaHandSpockSolid } from "react-icons/lia";
 import Background from "../Assests/background/background.webp";
 import { PiHandsPrayingFill } from "react-icons/pi";
 
@@ -38,16 +36,14 @@ const Landing = () => {
             scroll={false}
             onClick={(e) => {
               e.preventDefault(); // Prevent the default anchor behavior
-
-              // const element = document.getElementById("contactid");
-              // if (element) {
-              //   element.scrollIntoView({ behavior: "smooth" });
-              // }
               const element = document.getElementById("contactid");
               if (!element) return;
-              const targetPosition =
-                element.getBoundingClientRect().top -
-                element.getBoundingClientRect().width / 8; // Top of element relative to viewport
+              let targetPosition =
+                window.innerWidth / window.innerHeight >= 1.6
+                  ? element.getBoundingClientRect().top -
+                    element.getBoundingClientRect().width / 8
+                  : element.getBoundingClientRect().top -
+                    element.getBoundingClientRect().width / 3; // Top of element relative to viewport
               const startPosition = window.scrollY;
               const distance = targetPosition - startPosition;
               const duration = 1300; // Adjust to control the speed of the scroll

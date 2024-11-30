@@ -33,7 +33,7 @@ const Contact = () => {
 
     const capWidth = capEl.getBoundingClientRect().width;
     const capTranslate = -capEl.getBoundingClientRect().left;
-    const penTranslate = penEl.getBoundingClientRect().right - 1.4 * capWidth;
+    const penTranslate = penEl.getBoundingClientRect().right - 1.2 * capWidth;
 
     const tl = gsap.timeline({
       scrollTrigger: {

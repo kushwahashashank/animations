@@ -59,7 +59,7 @@ const About = () => {
     <>
       <div ref={texttriggerRef} className="container">
         <p className="about-content">
-          <h2>ABOUT ME</h2>
+          <p className="about-head">ABOUT ME</p>
           <span className="black-bg">
             I'm a passionate Software Developer, Pencil Drawing Artist, and
             Designer, blending my love for technology and art. My unique
@@ -75,14 +75,14 @@ const About = () => {
             <br /> Welcome to my world of creativity, where technology meets
             art!
           </span>
-          <h2>EXPERIENCE</h2>
+          <p className="about-head">EXPERIENCE</p>
           <span className="grey-bg">
             <span className="experience">
               Specialist Programmer <b>INFOSYS</b> <br /> Software Engineer{" "}
               <b>MAQ SOFTWARE</b> <br /> Software Engineer Intern <b>RITSWA</b>
             </span>
           </span>
-          <h2>EDUCATION</h2>
+          <p className="about-head">EDUCATION</p>
           <span className="white-bg">
             <span className="experience">
               Bachelor's in Technology (CSE){" "}
