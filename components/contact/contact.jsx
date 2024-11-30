@@ -110,7 +110,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact" id="contactid">
+    <div className="contact">
       <div ref={pentrigger} className="animatepen">
         <div className="pen-open">
           <Image
@@ -128,7 +128,7 @@ const Contact = () => {
             priority
           />
         </div>
-        <div ref={form} className="contact-form">
+        <div id="contactid" ref={form} className="contact-form">
           <h2 className="h2text">GET IN TOUCH</h2>
           <div className="contact-info">
             <input

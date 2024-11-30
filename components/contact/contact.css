@@ -103,4 +103,90 @@
     padding-bottom: 5px;
     padding-left: 16.5px;
   }
+
+  .contact-form textarea {
+    height: 8rem;
+    width: calc(50vw - 0.3rem);
+    outline: none;
+    font-size: 1rem;
+    /* padding: 0.6rem; */
+    border: none;
+  }
+  .contact-info {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    align-items: center;
+  }
+  .contact-info input {
+    height: 2.5rem;
+    width: 50vw;
+    outline: none;
+    font-size: 1rem;
+    /* padding: 0rem 0.2rem 0rem 0.6rem; */
+    border: none;
+    margin-top: 1rem;
+  }
+  .btn-submit {
+    margin-top: 0.8rem;
+    height: 2.5rem;
+    width: 6rem;
+    font-size: 1rem;
+    padding: none;
+    transform: unset;
+    margin-left: calc(50vw - 5rem);
+  }
+  .h2text {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .cap-pen {
+    height: 40px;
+  }
+  .pen-pen {
+    height: 36px;
+    padding-bottom: 5px;
+    padding-left: 15.5px;
+  }
+
+  .contact-form textarea {
+    height: 6rem;
+    width: calc(50vw - 0.3rem);
+    outline: none;
+    font-size: 1rem;
+    /* padding: 0.6rem; */
+    border: none;
+  }
+  .contact-info {
+    display: flex;
+    width: 50vw;
+    flex-direction: column;
+    margin-bottom: 0.8rem;
+    margin-top: 1rem;
+    align-items: center;
+  }
+  .contact-info input {
+    height: 2rem;
+    width: 50vw;
+    outline: none;
+    font-size: 1rem;
+    /* padding: 0rem 0.2rem 0rem 0.6rem; */
+    border: none;
+    margin-top: 0.8rem;
+  }
+  .btn-submit {
+    margin-top: 0.8rem;
+    height: 2rem;
+    width: 6rem;
+    font-size: 1rem;
+    padding: none;
+    transform: unset;
+    margin-left: calc(50vw - 5rem);
+  }
+  .h2text {
+    font-size: 1.5rem;
+  }
 }

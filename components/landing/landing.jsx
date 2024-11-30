@@ -13,19 +13,17 @@ const Landing = () => {
       <Image
         className="landing-container-background"
         src={Background}
-        // alt="https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         draggable="false"
       />
       <div className="intro-content">
-        <p className="intro">
+        <p className="intro-head">
           नमस्कार <PiHandsPrayingFill />, I'm
         </p>
         <p className="intro name">
           ABHISHEK <br /> KUSHWAHA
         </p>
-        <p style={{ fontSize: "1.1rem" }} className="intro">
-          Software Developer | Artist | Design Specialist
-        </p>
+        <p className="intro">Software Developer | Artist | Design Specialist</p>
         <div className="landing-buttons">
           <Link
             className="hireme"
@@ -40,10 +38,45 @@ const Landing = () => {
             scroll={false}
             onClick={(e) => {
               e.preventDefault(); // Prevent the default anchor behavior
+
+              // const element = document.getElementById("contactid");
+              // if (element) {
+              //   element.scrollIntoView({ behavior: "smooth" });
+              // }
               const element = document.getElementById("contactid");
-              if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
+              if (!element) return;
+              const targetPosition =
+                element.getBoundingClientRect().top -
+                element.getBoundingClientRect().width / 8; // Top of element relative to viewport
+              const startPosition = window.scrollY;
+              const distance = targetPosition - startPosition;
+              const duration = 1300; // Adjust to control the speed of the scroll
+              let startTime = null;
+
+              function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+
+                const timeElapsed = currentTime - startTime;
+                const run = ease(
+                  timeElapsed,
+                  startPosition,
+                  distance,
+                  duration
+                );
+                window.scrollTo(0, run);
+
+                if (timeElapsed < duration) requestAnimationFrame(animation);
               }
+
+              function ease(t, b, c, d) {
+                // easeInOutQuad easing function
+                t /= d / 2;
+                if (t < 1) return (c / 2) * t * t + b;
+                t--;
+                return (-c / 2) * (t * (t - 2) - 1) + b;
+              }
+
+              requestAnimationFrame(animation);
             }}
           >
             Let's Talk

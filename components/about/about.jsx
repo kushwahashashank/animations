@@ -8,20 +8,27 @@ import Lenis from "@studio-freight/lenis"; // Example import statement for the L
 
 const About = () => {
   const texttriggerRef = useRef(null);
-
   useEffect(() => {
-    if (process.browser) {
+    if (typeof window !== "undefined") {
       gsap.registerPlugin(ScrollTrigger);
+
       const lenis = new Lenis({
         lerp: 0.1,
       });
-      lenis.on("scroll", ScrollTrigger.update);
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-    }
 
-    return () => {};
+      lenis.on("scroll", ScrollTrigger.update);
+
+      const ticker = (time) => {
+        lenis.raf(time * 1000);
+      };
+
+      gsap.ticker.add(ticker);
+
+      return () => {
+        // gsap.ticker.remove(ticker);
+        // lenis.destroy();
+      };
+    }
   }, []);
 
   useEffect(() => {
@@ -70,7 +77,6 @@ const About = () => {
           </span>
           <h2>EXPERIENCE</h2>
           <span className="grey-bg">
-            {/* <span> */}
             <span className="experience">
               Specialist Programmer <b>INFOSYS</b> <br /> Software Engineer{" "}
               <b>MAQ SOFTWARE</b> <br /> Software Engineer Intern <b>RITSWA</b>
