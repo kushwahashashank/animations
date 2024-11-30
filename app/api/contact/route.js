@@ -64,10 +64,10 @@ export async function POST(req) {
     });
 
     const mailOptions = {
-      from: EMAIL_USER,
+      from: `You Know Me <${EMAIL_USER}>`,
       to: email,
       subject: "Thank you for contacting us!",
-      text: `You Know Me\n\nHello ${name},\n\nThank you for reaching out. We have received your message: "${message}".\n\nWe will get back to you shortly!\n\nBest regards,\nAbhishek Kushwaha `,
+      text: `Hello ${name},\n\nThank you for reaching out. We have received your message: "${message}".\n\nWe will get back to you shortly!\n\nBest regards,\nAbhishek Kushwaha `,
     };
 
     await transporter.sendMail(mailOptions);
