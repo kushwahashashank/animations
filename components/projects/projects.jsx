@@ -109,14 +109,38 @@ const Projects = () => {
       // Animate each container
 
       timeline
-        .to(project1.current, { translateY: 0 * scrolldistance, duration: 0 })
-        .to(project2.current, { translateY: 1 * scrolldistance, duration: 6 })
-        .to(project3.current, { translateY: 2 * scrolldistance, duration: 6 })
-        .to(project4.current, { translateY: 3 * scrolldistance, duration: 6 })
-        .to(project5.current, { translateY: 4 * scrolldistance, duration: 6 })
-        .to(project6.current, { translateY: 5 * scrolldistance, duration: 6 })
-        .to(project7.current, { translateY: 6 * scrolldistance, duration: 6 })
-        .to(project8.current, { translateY: 7 * scrolldistance, duration: 6 });
+        .to(project1.current, {
+          translateY: 0 * -1 * (window.innerHeight + 4),
+          duration: 0,
+        })
+        .to(project2.current, {
+          translateY: 1 * -1 * (window.innerHeight + 4),
+          duration: 6,
+        })
+        .to(project3.current, {
+          translateY: 2 * -1 * (window.innerHeight + 4),
+          duration: 6,
+        })
+        .to(project4.current, {
+          translateY: 3 * -1 * (window.innerHeight + 4),
+          duration: 6,
+        })
+        .to(project5.current, {
+          translateY: 4 * -1 * (window.innerHeight + 4),
+          duration: 6,
+        })
+        .to(project6.current, {
+          translateY: 5 * -1 * (window.innerHeight + 4),
+          duration: 6,
+        })
+        .to(project7.current, {
+          translateY: 6 * -1 * (window.innerHeight + 4),
+          duration: 6,
+        })
+        .to(project8.current, {
+          translateY: 7 * -1 * (window.innerHeight + 4),
+          duration: 6,
+        });
 
       return () => {
         timeline.kill(); // Cleanup on unmount to avoid memory leaks

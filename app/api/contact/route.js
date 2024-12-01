@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 import nodemailer from "nodemailer";
 
 // MongoDB connection string from environment variables
-const MONGO_URI =
-  "mongodb+srv://<kushwahashashank>:<w6Iwfjem20hi95yP>@cluster0.f2loe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_URI = "";
+
 const EMAIL_USER = "kushwahaabhi101@gmail.com";
 const EMAIL_PASS = "jlyn eqwb leef hccr";
 
@@ -31,12 +31,6 @@ const connectMongo = async () => {
     useUnifiedTopology: true,
   });
 };
-// const connectMongo = async () => {
-//   if (mongoose.connection.readyState === 1) {
-//     return mongoose.connection.asPromise();
-//   }
-//   return mongoose.connect(MONGO_URI); // no need for deprecated options
-// };
 
 // API route handler
 export async function POST(req) {
