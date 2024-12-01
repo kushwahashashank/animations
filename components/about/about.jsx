@@ -58,7 +58,7 @@ const About = () => {
   return (
     <>
       <div ref={texttriggerRef} className="container">
-        <p className="about-content">
+        <div className="about-content">
           <p className="about-head">ABOUT ME</p>
           <span className="black-bg">
             I'm a passionate Software Developer, Pencil Drawing Artist, and
@@ -93,7 +93,7 @@ const About = () => {
               <b>NEW STANDARD PUBLIC SCHOOL, RAE BARELI</b>
             </span>
           </span>
-        </p>
+        </div>
       </div>
     </>
   );
