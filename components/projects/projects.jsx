@@ -158,7 +158,7 @@ const Projects = () => {
           scrollTrigger: {
             trigger: containers,
             start: "top top",
-            end: "bottom top",
+            end: `${8 * window.innerHeight} top`,
             scrub: 1,
             pin: true,
           },
@@ -169,7 +169,7 @@ const Projects = () => {
           if (project) {
             newtimeline.to(project, {
               translateY: index * -1 * (scrollheight + 4),
-              duration: 6,
+              duration: 1.2,
               ease: "power1.inOut",
             });
           }

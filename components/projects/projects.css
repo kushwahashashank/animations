@@ -21,7 +21,6 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     user-select: none;
-    max-height: max-content;
     margin-bottom: 100vh;
   }
   .image-container {
