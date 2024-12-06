@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+.main {
+  display: flex;
+  gap: 30px;
+}
+/* Attendance.css */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Creates 5 equal columns */
+  grid-template-rows: repeat(7, 1fr); /* Creates 5 equal rows */
+  gap: 2px; /* Adjusts the space between blocks */
+  width: 150px; /* Set the total width of the grid */
+  height: 210px; /* Set the total height of the grid */
+}
+
+.block {
+  width: 100%; /* Ensures the block fills the grid cell */
+  height: 100%; /* Ensures the block fills the grid cell */
+  border: 1px solid rgb(255, 255, 255); /* Optional: Adds a border to blocks for visibility */
+}
